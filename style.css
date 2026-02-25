@@ -327,3 +327,80 @@ footer .social a:hover {color:#023047;}
   opacity:1;
   transform:translateY(0);
 }
+
+/* Chi siamo */
+.chi-siamo {
+  padding:6rem 2rem;
+  background:#f8f9fa;
+}
+
+.chi-siamo-container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:3rem;
+  flex-wrap:wrap;
+}
+
+.chi-siamo-video {
+  flex:0 0 300px;
+  height:300px;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.chi-siamo-video video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.chi-siamo-video:hover {
+  transform: scale(1.05);
+}
+
+.chi-siamo-testo {
+  flex:1;
+  max-width:600px;
+  text-align:left;
+}
+
+.chi-siamo h2 {
+  color:#0077b6;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+}
+
+.chi-siamo p {
+  font-size:1.1rem;
+  color:#333;
+  line-height:1.6;
+  margin-bottom:1rem;
+}
+
+/* Fade-in per testo e video */
+.chi-siamo-video,
+.chi-siamo-testo {
+  opacity:0;
+  transform:translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.chi-siamo-video.visible,
+.chi-siamo-testo.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .chi-siamo-container {
+    flex-direction:column;
+    gap:2rem;
+  }
+  .chi-siamo-testo {
+    text-align:center;
+  }
+}

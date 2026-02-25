@@ -48,3 +48,17 @@ const serviziObserver = new IntersectionObserver((entries, observer) => {
 }, {threshold:0.2});
 
 serviziCards.forEach(card => serviziObserver.observe(card));
+
+// Animazione Chi siamo
+const chiSiamoElements = document.querySelectorAll('.chi-siamo-video, .chi-siamo-testo');
+
+const chiSiamoObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.2});
+
+chiSiamoElements.forEach(el => chiSiamoObserver.observe(el));
