@@ -1,4 +1,6 @@
+// ==============================
 // Inserimento dinamico header e footer
+// ==============================
 fetch('header.html')
   .then(res => res.text())
   .then(data => {
@@ -10,7 +12,9 @@ fetch('footer.html')
   .then(res => res.text())
   .then(data => document.getElementById('footer-placeholder').innerHTML = data);
 
-// Funzione menu hamburger + animazione vertebre
+// ==============================
+// Menu hamburger + animazione puntini
+// ==============================
 function initHamburger() {
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav-menu');
@@ -18,6 +22,14 @@ function initHamburger() {
 
   function animateVertebre() {
     vertebre.forEach((v, index) => {
+      // reset per riavviare animazione ogni apertura
+      v.style.animation = 'none';
+      v.style.visibility = 'hidden';
+
+      // forza il browser a registrare il reset
+      void v.offsetWidth;
+
+      // animazione sequenziale
       v.style.animation = `vertebraAppear 0s linear ${0.27 * (index + 1)}s forwards`;
     });
   }
@@ -27,17 +39,27 @@ function initHamburger() {
     nav.classList.toggle('active');
 
     if (nav.classList.contains('active')) {
-      animateVertebre(); // applica animazione con delay
+      animateVertebre(); // ▶️ riparte ogni apertura
     } else {
-      // reset vertebre quando chiudi
-      vertebre.forEach(v => v.style.visibility = 'hidden');
+      // 🔁 reset completo alla chiusura
+      vertebre.forEach(v => {
+        v.style.visibility = 'hidden';
+        v.style.animation = 'none';
+      });
     }
   });
 }
 
-// Fade-in on scroll generale
+// ==============================
+// Fade-in generale
+// ==============================
 const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -50,8 +72,11 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Animazione fade-in singole card servizi
+// ==============================
+// Animazione card Servizi
+// ==============================
 const serviziCards = document.querySelectorAll('.servizio');
+
 const serviziObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -60,10 +85,14 @@ const serviziObserver = new IntersectionObserver((entries, observer) => {
     }
   });
 }, { threshold: 0.2 });
+
 serviziCards.forEach(card => serviziObserver.observe(card));
 
-// Animazione Chi siamo
+// ==============================
+// Animazione sezione Chi siamo
+// ==============================
 const chiSiamoElements = document.querySelectorAll('.chi-siamo-video, .chi-siamo-testo');
+
 const chiSiamoObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -72,4 +101,5 @@ const chiSiamoObserver = new IntersectionObserver((entries, observer) => {
     }
   });
 }, { threshold: 0.2 });
+
 chiSiamoElements.forEach(el => chiSiamoObserver.observe(el));
