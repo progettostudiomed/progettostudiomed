@@ -96,19 +96,19 @@ header {background:#fff; position:fixed; top:0; width:100%; z-index:1000; box-sh
   transition:transform 0.3s ease;
 }
 
-/* Animazione vertebre */
-.nav-menu.active .vertebra {
-  animation: vertebraPop 0.9s ease forwards;
+/* Vertebre/puntini menu */
+.nav-menu .vertebra {
+  width:10px;
+  height:10px;
+  background:#0077b6;
+  border-radius:50%;
+  margin-right:12px;
+  visibility:hidden; /* nascosto di default */
 }
 
-.nav-menu.active li:nth-child(1) .vertebra { animation-delay: 0.27s; }
-.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.54s; }
-.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.81s; }
-.nav-menu.active li:nth-child(4) .vertebra { animation-delay: 1.08s; }
-
-@keyframes vertebraPop {
-  0%   { transform: scale(0.6); }
-  100% { transform: scale(1.2); }
+/* Keyframe comparsa a scatto */
+@keyframes vertebraAppear {
+  to { visibility: visible; }
 }
 
 /* Icona WhatsApp come voce menu */
