@@ -12,55 +12,151 @@ header {background:#fff; position:fixed; top:0; width:100%; z-index:1000; box-sh
 .hamburger {display:flex; flex-direction:column; justify-content:space-between; width:25px; height:18px; cursor:pointer; z-index:1100;}
 .hamburger span {height:3px; background:#0077b6; border-radius:2px; transition: all 0.3s;}
 
-/* Nav menu */
-.nav-menu {position:fixed; top:0; right:-100%; width:70%; height:100%; background:#f8f9fa; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:right 0.3s; box-shadow:-2px 0 5px rgba(0,0,0,0.1);}
-.nav-menu ul {list-style:none;}
-.nav-menu ul li {margin:1.5rem 0;}
-.nav-menu ul li a {text-decoration:none; font-size:1.3rem; color:#0077b6; transition: color 0.3s;}
-.nav-menu ul li a:hover {color:#023047;}
-
 /* Hamburger active animation */
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
 .hamburger.active span:nth-child(2){opacity:0;}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-.nav-menu.active {right:0;}
 
-/* Hero */
-.hero {display:flex; justify-content:center; align-items:center; height:90vh; text-align:center; padding:0 1rem; background:#e0f7fa; transition: background 0.5s ease;}
-.hero h1 {font-size:2.8rem; color:#0077b6; margin-bottom:1rem; animation: slideDown 1s ease-out;}
-.hero p {font-size:1.2rem; color:#023047; animation: slideUp 1s ease-out;}
-
-@keyframes slideDown {from {opacity:0; transform: translateY(-30px);} to {opacity:1; transform: translateY(0);}}
-@keyframes slideUp {from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);}}
-
-/* Servizi */
-.servizi {padding:5rem 0; text-align:center;}
-.servizi h2 {color:#0077b6; margin-bottom:2rem; font-size:2rem;}
-.servizi-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
-.servizio {padding:2rem; border:1px solid #ddd; border-radius:10px; background:#f8f9fa; transition: transform 0.4s, box-shadow 0.4s;}
-.servizio:hover {transform: translateY(-8px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
-
-/* Chi siamo e contatti */
-.chi-siamo, .contatti {padding:4rem 0; text-align:center;}
-.chi-siamo h2, .contatti h2 {color:#0077b6; margin-bottom:1rem; font-size:2rem;}
-.chi-siamo p, .contatti p {max-width:700px; margin:0 auto; color:#333; font-size:1.1rem;}
-
-/* Footer */
-footer {background:#f8f9fa; padding:2rem 0; text-align:center; transition: background 0.3s;}
-footer p {margin-bottom:1rem; color:#555;}
-footer .social a {margin:0 0.5rem; text-decoration:none; color:#0077b6; transition: color 0.3s;}
-footer .social a:hover {color:#023047;}
-
-/* Fade-in animations for sections */
-.fade-in {opacity:0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out;}
-
-/* Responsive */
-@media(max-width:768px){
-  .nav-menu {width:80%;}
-  .hero h1 {font-size:2rem;}
+/* Nav menu base */
+.nav-menu {
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:70%;
+  height:100%;
+  background:#f8f9fa;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  transition:right 0.3s;
+  box-shadow:-2px 0 5px rgba(0,0,0,0.1);
+  padding-left:20px;
 }
 
-/* HERO */
+.nav-menu.active {right:0;}
+.nav-menu ul {list-style:none;}
+
+/* Contenitore principale spina + voci */
+.menu-content {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  width:100%;
+}
+
+/* Sinistra: spina dorsale */
+.menu-left {
+  flex:0 0 60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.spina {
+  width:40px;
+  height:70%;
+  object-fit:contain;
+}
+
+/* Destra: voci menu */
+.menu-right {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:1.8rem;
+  padding-left:10px;
+}
+
+.menu-right li {
+  display:flex;
+  align-items:center;
+}
+
+.menu-right a {
+  font-size:1.3rem;
+  font-weight:500;
+  color:#0077b6;
+  text-decoration:none;
+  transition:color 0.3s;
+}
+
+.menu-right a:hover {
+  color:#023047;
+}
+
+/* Puntino vertebra */
+.vertebra {
+  width:10px;
+  height:10px;
+  background:#0077b6;
+  border-radius:50%;
+  margin-right:12px;
+  transform:scale(1);
+  transition:transform 0.3s ease;
+}
+
+/* Animazione vertebre */
+.nav-menu.active .vertebra {
+  animation: vertebraPop 0.9s ease forwards;
+}
+
+.nav-menu.active li:nth-child(1) .vertebra { animation-delay: 0.27s; }
+.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.54s; }
+.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.81s; }
+.nav-menu.active li:nth-child(4) .vertebra { animation-delay: 1.08s; }
+
+@keyframes vertebraPop {
+  0%   { transform: scale(0.6); }
+  100% { transform: scale(1.2); }
+}
+
+/* Icona WhatsApp come voce menu */
+.menu-whatsapp-item img {
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  cursor:pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-whatsapp-item img:hover {
+  transform: scale(1.15);
+}
+
+/* LOGO in cima al menu */
+.menu-top-logo {
+  width:100%;
+  text-align:center;
+  padding:2rem 0 1rem 0;
+}
+
+.menu-top-logo a {
+  text-decoration:none;
+  display:inline-block;
+}
+
+.menu-top-logo h1 {
+  font-size:1.5rem;
+  font-weight:700;
+  color:#0077b6;
+}
+
+.menu-top-logo h1:hover {
+  color:#023047;
+}
+
+.menu-top-logo .underline {
+  display:block;
+  width:50%;
+  max-width:80px;
+  height:2px;
+  background:#0077b6;
+  margin:0.3rem auto 0 auto;
+  border-radius:1px;
+}
+
+/* Hero */
 .hero {
   display:flex;
   justify-content:center;
@@ -70,304 +166,82 @@ footer .social a:hover {color:#023047;}
   padding:0 1rem;
   background: url('img/banner-studiomed.png') center/cover no-repeat;
   position: relative;
-  color: #fff;
+  color:#fff;
 }
 
 .hero-overlay {
-  position: absolute;
-  top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.35); /* leggera overlay scura per migliorare leggibilità testo */
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.35);
   z-index:1;
 }
 
 .hero-content {
-  position: relative;
+  position:relative;
   z-index:2;
 }
 
-.hero h1, .hero p {
-  color: #fff; /* testo bianco sopra l’immagine */
-}
+/* Sezioni */
+.servizi {padding:5rem 0; text-align:center;}
+.servizi h2 {color:#0077b6; margin-bottom:2rem; font-size:2rem;}
+.servizi-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
+.servizio {padding:2rem; border:1px solid #ddd; border-radius:10px; background:#f8f9fa; transition: transform 0.4s, box-shadow 0.4s;}
+.servizio:hover {transform: translateY(-8px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
 
-/* Contenitore menu */
-.nav-menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;          /* centra tutto verticalmente */
-  position: fixed;
-  top:0; right:-100%;
-  width:70%; height:100%;
-  background:#f8f9fa;
-  transition: right 0.3s;
-  box-shadow:-2px 0 5px rgba(0,0,0,0.1);
-  padding-left:20px;
-}
+.chi-siamo, .contatti {padding:4rem 0; text-align:center;}
+.chi-siamo h2, .contatti h2 {color:#0077b6; margin-bottom:1rem; font-size:2rem;}
+.chi-siamo p, .contatti p {max-width:700px; margin:0 auto; color:#333; font-size:1.1rem;}
 
-/* Sinistra: spina dorsale */
-.menu-left {
-  flex: 0 0 60px;              /* ⬅️ più stretta */
-  display: flex;
-  justify-content: center;
-  align-items: center;         /* centra la spina */
-}
-
-.spina {
-  width: 40px;                 /* ⬅️ ridotta */
-  height: 70%;                 /* ⬅️ non tutta l’altezza, più elegante */
-  object-fit: contain;
-}
-
-/* Destra: voci menu */
-.menu-right {
-  flex: 1;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;     /* ⬅️ centra le voci rispetto alla spina */
-  gap: 1.8rem;                 /* spaziatura elegante */
-  padding-left: 10px;
-}
-
-.menu-right li {
-  display: flex;
-  align-items: center;
-}
-
-.menu-right a {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #0077b6;
-  transition: color 0.3s;
-}
-
-.menu-right a:hover {
-  color:#023047;
-}
-
-/* Puntino vertebra */
-.vertebra {
-  width: 10px;
-  height: 10px;
-  background: #0077b6;
-  border-radius: 50%;
-  margin-right: 12px;
-}
-
-/* Animazione vertebre */
-.vertebra {
-  width: 10px;
-  height: 10px;
-  background: #0077b6;
-  border-radius: 50%;
-  margin-right: 12px;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
-/* Stato animato */
-.nav-menu.active .vertebra {
-  animation: vertebraPop 0.9s ease forwards;
-}
-
-/* Sequenza dall'alto al basso */
-.nav-menu.active li:nth-child(1) .vertebra { animation-delay: 0.27s; }
-.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.54s; }
-.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.81s; }
-
-@keyframes vertebraPop {
-  0%   { transform: scale(0.6); }
-  100% { transform: scale(1.2); }
-}
-
-/* CONTATTI */
+/* Contatti */
 .contatti-container {
-  display: flex;
-  flex-direction: column; /* verticale */
-  align-items: center;    /* centra orizzontalmente */
-  justify-content: flex-start;
-  width: 100%;
-  gap: 2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2rem;
 }
 
-.contatti-container .mappa,
-.contatti-container .modulo-contatti {
-  width: 90%;           
-  max-width: 700px;     
-  margin: 0 auto;       /* centrato */
-  min-width: 0;         
-  box-sizing: border-box;
-}
-
-@media(max-width: 1023px) {
-  .contatti-container .mappa,
-  .contatti-container .modulo-contatti {
-    width: 90%;
-    max-width: none;
-    min-width: 0;
-  }
-}
-
-/* Modulo contatti professionale */
 .modulo-contatti {
-  background: #f9f9f9;            /* colore chiaro elegante */
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-family: 'Arial', sans-serif;
+  background:#f9f9f9;
+  padding:2.5rem;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  width:90%;
+  max-width:700px;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
 }
 
-/* Etichette */
-.modulo-contatti label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #023047;  /* blu scuro elegante */
-}
-
-/* Input e textarea */
 .modulo-contatti input,
 .modulo-contatti textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.3s, box-shadow 0.3s;
+  width:100%;
+  padding:0.8rem 1rem;
+  border:1px solid #ccc;
+  border-radius:8px;
 }
 
-.modulo-contatti input:focus,
-.modulo-contatti textarea:focus {
-  border-color: #0077b6;       /* colore accento blu */
-  box-shadow: 0 0 5px rgba(0, 119, 182, 0.2);
-  outline: none;
-}
-
-/* Pulsante */
 .modulo-contatti button {
-  padding: 0.8rem 1.8rem;
-  background-color: #0077b6;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  align-self: flex-start;  /* il pulsante si allinea a sinistra */
+  padding:0.8rem 1.8rem;
+  background-color:#0077b6;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
 }
 
 .modulo-contatti button:hover {
-  background-color: #005f87;
-  transform: translateY(-2px);
+  background-color:#005f87;
 }
 
-/* Layout responsive */
-@media(max-width: 768px) {
-  .modulo-contatti {
-    padding: 2rem 1.5rem;
-  }
+/* Footer */
+footer {background:#f8f9fa; padding:2rem 0; text-align:center;}
+footer .social a {margin:0 0.5rem; color:#0077b6;}
+footer .social a:hover {color:#023047;}
 
-  .modulo-contatti button {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* LOGO in cima al menu mobile, centrato */
-.menu-top-logo {
-  width: 100%;
-  text-align: center;
-  padding: 2rem 0 1rem 0;
-}
-
-.menu-top-logo a {
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-}
-
-.menu-top-logo h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0077b6;
-  margin: 0;
-  display: inline-block;
-}
-
-.menu-top-logo h1:hover {
-  color: #023047;
-}
-
-/* Contenitore principale spina + voci */
-.menu-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  padding-left: 20px;
-}
-
-/* Linea corta sotto il testo */
-.menu-top-logo .underline {
-  display: block;
-  width: 50%;              /* più corta del testo */
-  max-width: 80px;         /* opzionale, limita larghezza massima */
-  height: 2px;
-  background: #0077b6;
-  margin: 0.3rem auto 0 auto; /* centrata sotto il testo */
-  border-radius: 1px;
-}
-
-/* RESPONSIVE LOGO MENU */
-@media(max-width: 768px) {
-  .nav-menu {
-    flex-direction: column; /* logo sopra, resto sotto */
-    align-items: center;
-    padding-left: 0;
-  }
-
-  .menu-top-logo {
-    order: -1; /* forza il logo in cima */
-    margin-bottom: 1.5rem; /* spazio tra logo e menu-content */
-  }
-
-  .menu-content {
-    flex-direction: row; /* spina e voci rimangono affiancate */
-    align-items: center;
-    gap: 1.5rem; /* distanza tra spina e voci */
-    width: 100%;
-    justify-content: center; /* centra spina + voci */
-    padding-left: 0;
-  }
-}
-
-/* Desktop: logo WhatsApp sotto il nome nel menu */
-.menu-whatsapp {
-  margin-top: 1rem;
-  text-align: left;   /* allinea a sinistra */
-}
-
-.menu-whatsapp img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-/* Mobile: logo WhatsApp centrato in basso del menu */
-@media(max-width: 768px) {
-  .menu-whatsapp {
-    margin-top: 2rem;
-    text-align: center; /* centrato */
-  }
-
-  .menu-whatsapp img {
-    width: 50px;
-    height: 50px;
-  }
+/* Responsive */
+@media(max-width:768px){
+  .nav-menu {width:80%; flex-direction:column; align-items:center; padding-left:0;}
+  .menu-content {justify-content:center; padding-left:0;}
+  .hero h1 {font-size:2rem;}
 }
