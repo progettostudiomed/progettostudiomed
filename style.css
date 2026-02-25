@@ -277,3 +277,19 @@ footer .social a:hover {color:#023047;}
     text-align: center;
   }
 }
+
+/* Logo e sotto-titolo */
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0077b6;           /* blu istituzionale */
+  margin-bottom: 0.3rem;
+}
+
+.logo .sotto-titolo {
+  font-size: 1rem;
+  color: #555;               /* grigio sobrio */
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.3;
+}
