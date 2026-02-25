@@ -174,9 +174,7 @@ footer .social a:hover {color:#023047;}
 .nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.54s; }
 .nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.81s; }
 
-/* Keyframes */
 @keyframes vertebraPop {
   0%   { transform: scale(0.6); opacity: 0; }
-  60%  { transform: scale(1.4); opacity: 1; }
-  100% { transform: scale(1); }
+  100% { transform: scale(1.2); opacity: 1; }
 }
