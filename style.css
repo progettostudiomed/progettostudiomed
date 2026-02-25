@@ -166,13 +166,13 @@ footer .social a:hover {color:#023047;}
 
 /* Stato animato */
 .nav-menu.active .vertebra {
-  animation: vertebraPop 0.35s ease forwards;
+  animation: vertebraPop 0.6s ease forwards;
 }
 
 /* Sequenza dall'alto al basso */
 .nav-menu.active li:nth-child(1) .vertebra { animation-delay: 0.05s; }
-.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.15s; }
-.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.25s; }
+.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.36s; }
+.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.6s; }
 
 /* Keyframes */
 @keyframes vertebraPop {
