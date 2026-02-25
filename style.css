@@ -303,17 +303,6 @@ footer .social a:hover {color:#023047;}
   color: #023047;
 }
 
-/* Linea decorativa sotto il testo */
-.menu-top-logo .underline {
-  display: block;
-  width: 50%;          /* linea corta */
-  max-width: 80px;     /* opzionale */
-  height: 2px;
-  background: #0077b6;
-  margin: 0.3rem auto 0 auto; /* centrata */
-  border-radius: 1px;
-}
-
 /* Contenitore principale spina + voci */
 .menu-content {
   display: flex;
