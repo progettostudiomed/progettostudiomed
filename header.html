@@ -1,19 +1,38 @@
-<nav id="nav-menu" class="nav-menu">
-  <!-- Intestazione menu -->
-  <div class="menu-top-logo">
-    <a href="https://progettostudiomed.github.io/progettostudiomed" target="_blank">
+<header>
+  <div class="container header-container">
+    <!-- Logo principale in header -->
+    <div class="logo">
       <h1>Nome Studio Medico</h1>
-    </a>
-    <hr>
-  </div>
+    </div>
 
-  <!-- Contenuto originale del menu -->
-  <div class="menu-left">
-    <img src="img/spina.svg" alt="Spina dorsale menu" class="spina">
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav id="nav-menu" class="nav-menu">
+      <!-- Logo in cima al menu -->
+      <div class="menu-top-logo">
+        <a href="https://progettostudiomed.github.io/progettostudiomed" target="_blank">
+          <h1>Nome Studio Medico</h1>
+        </a>
+        <hr>
+      </div>
+
+      <!-- Spina dorsale a sinistra -->
+      <div class="menu-left">
+        <img src="img/spina.svg" alt="Spina dorsale menu" class="spina">
+      </div>
+
+      <!-- Voci menu -->
+      <ul class="menu-right">
+        <li><span class="vertebra"></span><a href="#servizi">Servizi</a></li>
+        <li><span class="vertebra"></span><a href="#chi-siamo">Chi siamo</a></li>
+        <li><span class="vertebra"></span><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
   </div>
-  <ul class="menu-right">
-    <li><span class="vertebra"></span><a href="#servizi">Servizi</a></li>
-    <li><span class="vertebra"></span><a href="#chi-siamo">Chi siamo</a></li>
-    <li><span class="vertebra"></span><a href="#contatti">Contatti</a></li>
-  </ul>
-</nav>
+</header>
