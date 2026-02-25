@@ -88,3 +88,67 @@ footer .social a:hover {color:#023047;}
 .hero h1, .hero p {
   color: #fff; /* testo bianco sopra l’immagine */
 }
+
+/* Contenitore menu aggiornato */
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: fixed;
+  top:0; right:-100%;
+  width:70%; height:100%;
+  background:#f8f9fa;
+  transition: right 0.3s;
+  box-shadow:-2px 0 5px rgba(0,0,0,0.1);
+  padding-left:20px;
+}
+
+/* Sinistra: spina dorsale */
+.menu-left {
+  flex: 0 0 100px; /* larghezza linea */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: 50px;
+}
+
+.spina {
+  width: 80px; /* larghezza linea */
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Destra: voci menu */
+.menu-right {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.menu-right li {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu-right a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0077b6;
+  transition: color 0.3s;
+}
+
+.menu-right a:hover { color:#023047; }
+
+/* Puntino vertebra */
+.vertebra {
+  width: 12px;
+  height: 12px;
+  background: #0077b6;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
