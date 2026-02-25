@@ -346,36 +346,28 @@ footer .social a:hover {color:#023047;}
   }
 }
 
-/* WhatsApp desktop: sotto il nome del sito */
-.logo {
-  display: flex;
-  flex-direction: column; /* impila nome + WhatsApp */
-  align-items: flex-start; /* a sinistra */
-  gap: 0.5rem; /* distanza tra nome e logo */
-}
-
-.logo .whatsapp-logo img {
-  width: 40px; /* dimensione icona desktop */
-  height: 40px;
-  object-fit: contain;
-}
-
-/* WhatsApp mobile: centrato in fondo al menu */
+/* Desktop: logo WhatsApp sotto il nome nel menu */
 .menu-whatsapp {
-  margin-top: 2rem; /* distanza da voci menu */
-  text-align: center;
+  margin-top: 1rem;
+  text-align: left;   /* allinea a sinistra */
 }
 
 .menu-whatsapp img {
-  width: 50px;  /* leggermente più grande per clic facili su mobile */
-  height: 50px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   cursor: pointer;
 }
 
-/* Solo smartphone */
+/* Mobile: logo WhatsApp centrato in basso del menu */
 @media(max-width: 768px) {
-  .logo .whatsapp-logo {
-    display: none; /* nasconde la versione desktop del logo */
+  .menu-whatsapp {
+    margin-top: 2rem;
+    text-align: center; /* centrato */
+  }
+
+  .menu-whatsapp img {
+    width: 50px;
+    height: 50px;
   }
 }
