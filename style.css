@@ -152,3 +152,31 @@ footer .social a:hover {color:#023047;}
   border-radius: 50%;
   margin-right: 12px;
 }
+
+/* Animazione vertebre */
+.vertebra {
+  width: 10px;
+  height: 10px;
+  background: #0077b6;
+  border-radius: 50%;
+  margin-right: 12px;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Stato animato */
+.nav-menu.active .vertebra {
+  animation: vertebraPop 0.35s ease forwards;
+}
+
+/* Sequenza dall'alto al basso */
+.nav-menu.active li:nth-child(1) .vertebra { animation-delay: 0.05s; }
+.nav-menu.active li:nth-child(2) .vertebra { animation-delay: 0.15s; }
+.nav-menu.active li:nth-child(3) .vertebra { animation-delay: 0.25s; }
+
+/* Keyframes */
+@keyframes vertebraPop {
+  0%   { transform: scale(0.6); opacity: 0; }
+  60%  { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(1); }
+}
