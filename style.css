@@ -1,0 +1,61 @@
+/* Reset e base */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: 'Arial', sans-serif; background:#fff; color:#333; line-height:1.6; scroll-behavior: smooth;}
+.container {width:90%; max-width:1200px; margin:0 auto;}
+
+/* Header */
+header {background:#fff; position:fixed; top:0; width:100%; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+.header-container {display:flex; justify-content:space-between; align-items:center; padding:1rem 0;}
+.logo h1 {font-size:1.5rem; color:#0077b6; font-weight:700;}
+
+/* Hamburger menu */
+.hamburger {display:flex; flex-direction:column; justify-content:space-between; width:25px; height:18px; cursor:pointer; z-index:1100;}
+.hamburger span {height:3px; background:#0077b6; border-radius:2px; transition: all 0.3s;}
+
+/* Nav menu */
+.nav-menu {position:fixed; top:0; right:-100%; width:70%; height:100%; background:#f8f9fa; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:right 0.3s; box-shadow:-2px 0 5px rgba(0,0,0,0.1);}
+.nav-menu ul {list-style:none;}
+.nav-menu ul li {margin:1.5rem 0;}
+.nav-menu ul li a {text-decoration:none; font-size:1.3rem; color:#0077b6; transition: color 0.3s;}
+.nav-menu ul li a:hover {color:#023047;}
+
+/* Hamburger active animation */
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.nav-menu.active {right:0;}
+
+/* Hero */
+.hero {display:flex; justify-content:center; align-items:center; height:90vh; text-align:center; padding:0 1rem; background:#e0f7fa; transition: background 0.5s ease;}
+.hero h1 {font-size:2.8rem; color:#0077b6; margin-bottom:1rem; animation: slideDown 1s ease-out;}
+.hero p {font-size:1.2rem; color:#023047; animation: slideUp 1s ease-out;}
+
+@keyframes slideDown {from {opacity:0; transform: translateY(-30px);} to {opacity:1; transform: translateY(0);}}
+@keyframes slideUp {from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);}}
+
+/* Servizi */
+.servizi {padding:5rem 0; text-align:center;}
+.servizi h2 {color:#0077b6; margin-bottom:2rem; font-size:2rem;}
+.servizi-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
+.servizio {padding:2rem; border:1px solid #ddd; border-radius:10px; background:#f8f9fa; transition: transform 0.4s, box-shadow 0.4s;}
+.servizio:hover {transform: translateY(-8px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+
+/* Chi siamo e contatti */
+.chi-siamo, .contatti {padding:4rem 0; text-align:center;}
+.chi-siamo h2, .contatti h2 {color:#0077b6; margin-bottom:1rem; font-size:2rem;}
+.chi-siamo p, .contatti p {max-width:700px; margin:0 auto; color:#333; font-size:1.1rem;}
+
+/* Footer */
+footer {background:#f8f9fa; padding:2rem 0; text-align:center; transition: background 0.3s;}
+footer p {margin-bottom:1rem; color:#555;}
+footer .social a {margin:0 0.5rem; text-decoration:none; color:#0077b6; transition: color 0.3s;}
+footer .social a:hover {color:#023047;}
+
+/* Fade-in animations for sections */
+.fade-in {opacity:0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out;}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-menu {width:80%;}
+  .hero h1 {font-size:2rem;}
+}
