@@ -325,16 +325,49 @@ footer .social a:hover {color:#023047;}
 
 /* RESPONSIVE LOGO MENU */
 @media(max-width: 768px) {
-  .menu-whatsapp {
-    order: 2;          /* forza il logo in fondo */
-    margin: 1.5rem 0;  /* margine sopra e sotto */
-    text-align: center; /* centra orizzontalmente */
+  .nav-menu {
+    flex-direction: column; /* logo sopra, resto sotto */
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .menu-top-logo {
+    order: -1; /* forza il logo in cima */
+    margin-bottom: 1.5rem; /* spazio tra logo e menu-content */
+  }
+
+  .menu-content {
+    flex-direction: row; /* spina e voci rimangono affiancate */
+    align-items: center;
+    gap: 1.5rem; /* distanza tra spina e voci */
+    width: 100%;
+    justify-content: center; /* centra spina + voci */
+    padding-left: 0;
   }
 }
 
+/* Desktop: logo WhatsApp sotto il nome nel menu */
+.menu-whatsapp {
+  margin-top: 1rem;
+  text-align: left;   /* allinea a sinistra */
+}
 
+.menu-whatsapp img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
 
+/* Mobile: logo WhatsApp centrato in basso del menu */
+@media(max-width: 768px) {
+  .menu-whatsapp {
+    margin-top: 2rem;
+    text-align: center; /* centrato */
+  }
 
-
-
-
+  .menu-whatsapp img {
+    width: 50px;
+    height: 50px;
+  }
+}
