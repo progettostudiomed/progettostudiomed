@@ -241,7 +241,18 @@ footer .social a:hover {color:#023047;}
 
 /* Responsive */
 @media(max-width:768px){
-  .nav-menu {width:80%; flex-direction:column; align-items:center; padding-left:0;}
-  .menu-content {justify-content:center; padding-left:0;}
+  .nav-menu {
+    width:80%;
+    flex-direction:column;
+    align-items:center;
+    padding-left:0;
+    padding-top:80px; /* ⬅️ aggiungi questa riga */
+  }
+
+  .menu-content {
+    justify-content:center;
+    padding-left:0;
+  }
+
   .hero h1 {font-size:2rem;}
 }
