@@ -282,9 +282,8 @@ footer .social a:hover {color:#023047;}
 .menu-top-logo {
   width: 100%;
   text-align: center;
-  padding: 1.5rem 0 1rem 0;  /* spazio sopra e sotto il testo */
-  border-bottom: 1px solid #0077b6; /* linea elegante sotto il nome */
-  margin-bottom: 2rem; /* separazione da spina e voci */
+  padding: 1.5rem 0 1rem 0;
+  margin-bottom: 2rem; /* spazio tra logo e spina */
 }
 
 .menu-top-logo a {
@@ -296,6 +295,8 @@ footer .social a:hover {color:#023047;}
   color: #0077b6;
   font-weight: 700;
   margin: 0;
+  display: inline-block; /* per far sottolineare solo il testo */
+  position: relative;
   transition: color 0.3s;
 }
 
@@ -303,7 +304,11 @@ footer .social a:hover {color:#023047;}
   color: #023047;
 }
 
-/* Riduci altezza spina se necessario per lasciare spazio */
-.nav-menu .menu-left {
-  margin-top: 0; /* rimuove eventuale margine che spinge spina verso il logo */
+/* Linea corta sotto il testo */
+.menu-top-logo .underline {
+  width: 60%;           /* linea più corta del testo stesso */
+  height: 2px;
+  background: #0077b6;
+  margin: 0.3rem auto 0 auto; /* centrata sotto il testo */
+  border-radius: 1px;
 }
