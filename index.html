@@ -1,27 +1,54 @@
-.hero {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:90vh;
-  text-align:center;
-  padding:0 1rem;
-  background: url('img/banner-studiomed.png') center/cover no-repeat;
-  position: relative;
-  color: #fff;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Terapie Fisiche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.hero-overlay {
-  position: absolute;
-  top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.35); /* leggera overlay scura per migliorare leggibilità testo */
-  z-index:1;
-}
+  <!-- Header dinamico -->
+  <div id="header-placeholder"></div>
 
-.hero-content {
-  position: relative;
-  z-index:2;
-}
+  <!-- Hero Section con immagine -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Il tuo percorso riabilitativo in buone mani</h1>
+      <p>Professionalità, attenzione e serenità per la tua salute fisica.</p>
+    </div>
+  </section>
 
-.hero h1, .hero p {
-  color: #fff; /* testo bianco sopra l’immagine */
-}
+  <!-- Servizi -->
+  <section id="servizi" class="servizi fade-in">
+    <h2>I nostri servizi</h2>
+    <div class="servizi-grid">
+      <div class="servizio">Riabilitazioni pre e post operatoria</div>
+      <div class="servizio">Terapia fisica</div>
+      <div class="servizio">Terapie manuali e rieducazione</div>
+      <div class="servizio">Terapia con mezzi fisici</div>
+      <div class="servizio">Massoterapia</div>
+      <div class="servizio">Trattamenti domiciliari</div>
+    </div>
+  </section>
+
+  <!-- Chi siamo -->
+  <section id="chi-siamo" class="chi-siamo fade-in">
+    <h2>Chi siamo</h2>
+    <p>Uno studio dedicato alla tua salute fisica, con professionisti esperti e un ambiente accogliente.</p>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti" class="contatti fade-in">
+    <h2>Contatti</h2>
+    <p>Email: info@studioterapiefisiche.it</p>
+    <p>Telefono: +39 012 3456789</p>
+  </section>
+
+  <!-- Footer dinamico -->
+  <div id="footer-placeholder"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
