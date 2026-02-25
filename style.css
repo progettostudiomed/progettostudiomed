@@ -360,10 +360,22 @@ footer .social a:hover {color:#023047;}
 }
 
 /* Mobile: logo WhatsApp centrato in basso del menu */
-@media(max-width: 768px) {
+  /* Sposta logo WhatsApp in fondo al menu mobile */
+  .nav-menu {
+    display: flex;
+    flex-direction: column;  /* logo e voci una sotto l'altra */
+    justify-content: space-between; /* spazio tra top e bottom */
+    height: 100%; /* occupa tutto il menu */
+  }
+
+  .menu-content {
+    order: 1; /* resta sopra */
+  }
+
   .menu-whatsapp {
-    margin-top: 2rem;
-    text-align: center; /* centrato */
+    order: 2;          /* forza il logo in fondo */
+    margin: 1.5rem 0;  /* margine sopra e sotto */
+    text-align: center; /* centra orizzontalmente */
   }
 
   .menu-whatsapp img {
