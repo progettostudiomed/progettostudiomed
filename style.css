@@ -278,24 +278,27 @@ footer .social a:hover {color:#023047;}
   }
 }
 
-/* LOGO in cima al menu */
+/* LOGO in cima al menu mobile, centrato */
 .menu-top-logo {
   width: 100%;
   text-align: center;
-  padding: 1.5rem 0 1rem 0;
-  margin-bottom: 2rem; /* spazio tra logo e spina */
+  padding: 2rem 0 1rem 0;
 }
 
+/* Link cliccabile */
 .menu-top-logo a {
   text-decoration: none;
+  display: inline-block;
+  position: relative;
 }
 
+/* Testo logo */
 .menu-top-logo h1 {
   font-size: 1.5rem;
-  color: #0077b6;
   font-weight: 700;
+  color: #0077b6;
   margin: 0;
-  display: inline-block; /* per far sottolineare solo il testo */
+  display: inline-block;
   position: relative;
   transition: color 0.3s;
 }
@@ -306,7 +309,9 @@ footer .social a:hover {color:#023047;}
 
 /* Linea corta sotto il testo */
 .menu-top-logo .underline {
-  width: 60%;           /* linea più corta del testo stesso */
+  display: block;
+  width: 50%;              /* più corta del testo */
+  max-width: 80px;         /* opzionale, limita larghezza massima */
   height: 2px;
   background: #0077b6;
   margin: 0.3rem auto 0 auto; /* centrata sotto il testo */
