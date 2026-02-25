@@ -322,3 +322,26 @@ footer .social a:hover {color:#023047;}
   margin: 0.3rem auto 0 auto; /* centrata sotto il testo */
   border-radius: 1px;
 }
+
+/* RESPONSIVE LOGO MENU */
+@media(max-width: 768px) {
+  .nav-menu {
+    flex-direction: column; /* logo sopra, resto sotto */
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .menu-top-logo {
+    order: -1; /* forza il logo in cima */
+    margin-bottom: 1.5rem; /* spazio tra logo e menu-content */
+  }
+
+  .menu-content {
+    flex-direction: row; /* spina e voci rimangono affiancate */
+    align-items: center;
+    gap: 1.5rem; /* distanza tra spina e voci */
+    width: 100%;
+    justify-content: center; /* centra spina + voci */
+    padding-left: 0;
+  }
+}
