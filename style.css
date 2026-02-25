@@ -256,3 +256,74 @@ footer .social a:hover {color:#023047;}
 
   .hero h1 {font-size:2rem;}
 }
+
+/* SERVIZI */
+.servizi {
+  padding:6rem 2rem;
+  text-align:center;
+  background:#fefefe;
+}
+
+.servizi h2 {
+  color:#0077b6;
+  margin-bottom:3rem;
+  font-size:2.2rem;
+  font-weight:700;
+}
+
+.servizi-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2.5rem;
+}
+
+.servizio {
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor:default;
+}
+
+.servizio:hover {
+  transform: translateY(-10px);
+  box-shadow:0 15px 25px rgba(0,0,0,0.15);
+}
+
+.servizio img {
+  width:100%;
+  height:300px; /* coerente con le immagini 400x300 px */
+  object-fit:cover;
+  transition: transform 0.4s ease;
+}
+
+.servizio:hover img {
+  transform: scale(1.05);
+}
+
+.servizio h3 {
+  color:#0077b6;
+  font-size:1.3rem;
+  font-weight:600;
+  margin:1rem 1rem 0.5rem 1rem;
+}
+
+.servizio p {
+  font-size:1rem;
+  color:#333;
+  line-height:1.5;
+  margin:0 1rem 1.5rem 1rem;
+}
+
+/* Fade-in e apparizione singola per le card */
+.servizio {
+  opacity:0;
+  transform:translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.servizio.visible {
+  opacity:1;
+  transform:translateY(0);
+}

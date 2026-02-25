@@ -34,3 +34,17 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 }, appearOptions);
 
 faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Animazione fade-in singole card servizi
+const serviziCards = document.querySelectorAll('.servizio');
+
+const serviziObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.2});
+
+serviziCards.forEach(card => serviziObserver.observe(card));
