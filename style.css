@@ -178,3 +178,102 @@ footer .social a:hover {color:#023047;}
   0%   { transform: scale(0.6); }
   100% { transform: scale(1.2); }
 }
+
+/* CONTATTI */
+.contatti-container {
+  display: flex;
+  flex-direction: column; /* verticale */
+  align-items: center;    /* centra orizzontalmente */
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2rem;
+}
+
+.contatti-container .mappa,
+.contatti-container .modulo-contatti {
+  width: 90%;           
+  max-width: 700px;     
+  margin: 0 auto;       /* centrato */
+  min-width: 0;         
+  box-sizing: border-box;
+}
+
+@media(max-width: 1023px) {
+  .contatti-container .mappa,
+  .contatti-container .modulo-contatti {
+    width: 90%;
+    max-width: none;
+    min-width: 0;
+  }
+}
+
+/* Modulo contatti professionale */
+.modulo-contatti {
+  background: #f9f9f9;            /* colore chiaro elegante */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Etichette */
+.modulo-contatti label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #023047;  /* blu scuro elegante */
+}
+
+/* Input e textarea */
+.modulo-contatti input,
+.modulo-contatti textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.modulo-contatti input:focus,
+.modulo-contatti textarea:focus {
+  border-color: #0077b6;       /* colore accento blu */
+  box-shadow: 0 0 5px rgba(0, 119, 182, 0.2);
+  outline: none;
+}
+
+/* Pulsante */
+.modulo-contatti button {
+  padding: 0.8rem 1.8rem;
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  align-self: flex-start;  /* il pulsante si allinea a sinistra */
+}
+
+.modulo-contatti button:hover {
+  background-color: #005f87;
+  transform: translateY(-2px);
+}
+
+/* Layout responsive */
+@media(max-width: 768px) {
+  .modulo-contatti {
+    padding: 2rem 1.5rem;
+  }
+
+  .modulo-contatti button {
+    width: 100%;
+    text-align: center;
+  }
+}
